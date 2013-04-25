@@ -1,0 +1,11 @@
+<p>
+	<span id="watchdisplay">00:00:00</span> 
+	<input onclick="w.start()" type="button" value="Start" /> 
+	<input onclick="w.stop()" type="button" value="Stop" /> 
+	<script type="text/javascript">// <![CDATA[
+		function updatedisplay(watch) {
+		document.getElementById('watchdisplay').innerHTML = watch.toString() + "." + parseInt(watch.getElapsed().milliseconds/100);
+		}
+	var w = new Stopwatch(updatedisplay, 50);
+	// ]]&gt;</script>
+</p>
