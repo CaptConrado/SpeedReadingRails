@@ -2,7 +2,7 @@
 
 <% current_word_count = @quiz.content.split(' ').count	 %>
 
-  <% est_time = wpm_calc('3','45',current_word_count) %>
+  <%= est_time = wpm_calc('3','45',current_word_count) %>
   <% time_quant(est_time,current_word_count) %>
 
 

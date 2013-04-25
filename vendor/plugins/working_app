@@ -103,3 +103,4 @@ perc.each do |x|
 	puts "If you are #{x.last} you are reading at #{x.first}% of National average."
 end
 
+

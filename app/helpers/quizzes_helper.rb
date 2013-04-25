@@ -15,8 +15,13 @@ module QuizzesHelper
 		time = Time.at(sec).strftime("%M:%S")
 	end
 
-	
-	
+	def word_count
+		self.body.scan(/\w+/).size
+	end
+
+	def letter_count
+		self.body.scan(/./).size
+	end
 
 	
 
