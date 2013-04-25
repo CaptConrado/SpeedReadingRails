@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<% current_word_count = @quiz.content.split(' ').count	 %>
+
+  <% est_time = wpm_calc('3','45',current_word_count) %>
+  <% time_quant(est_time,current_word_count) %>
+
+
 <p>
   <b>Name:</b>
   <%= @quiz.name %>
@@ -7,8 +13,19 @@
 
 <p>
   <b>Content:</b>
+  <p>The stuff you gotta read in x time </p>
   <%= @quiz.content %>
+
+
+
 </p>
+
+
+
+
+
+
+
 
 
 <%= link_to 'Edit', edit_quiz_path(@quiz) %> |
