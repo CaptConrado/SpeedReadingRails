@@ -1,11 +1,15 @@
 <p id="notice"><%= notice %></p>
+<% @current_word_count = @quiz.content.split(' ').count	 %>
+<% avg_wpm_prose = 300;
+est_time = time_quant(avg_wpm_prose,@current_word_count) %>
 
-<% current_word_count = @quiz.content.split(' ').count	 %>
 
-  <% est_time = wpm_calc('3','45',current_word_count) %>
-  <% time_quant(est_time,current_word_count) %>
 
-<p> The time is now <%= time_now %> </p>
+  <% temp = wpm_calc('3','45',@current_word_count) %>
+  <% time_quant(temp,@current_word_count) %>
+
+<p> The time is now <%= elmo = time_now %> </p>
+
 
 <p>
   <b>Name:</b>
@@ -14,16 +18,14 @@
 
 <p>
   <b>Content:</b>
-  <p>The stuff you gotta read in x time </p>
+  <p>There are currently <%= @current_word_count %> words in this passage </p>
+  <p> It should take you <%= est_time %> to finish the average being <%= avg_wpm_prose %> wpm</p>
   <%= @quiz.content %>
-
-
-
 </p>
 
 
 
-
+<!-- <iframe width="100%" height="300" src="http://jsfiddle.net/QUhjx/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> -->
 
 
 

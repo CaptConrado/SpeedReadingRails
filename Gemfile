@@ -21,6 +21,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'angularjs-rails'
+
 
 group :production do
   gem 'pg'
